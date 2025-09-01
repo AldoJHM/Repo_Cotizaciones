@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-    
+
     --color-primary: #848484;
     --color-primary-hover: #242424;
     --color-background: #f1f5f9;
@@ -25,24 +25,32 @@
 }
 
 .navbar-container {
-    max-width: 80rem; /* 1280px */
+    max-width: 80rem;
+    /* 1280px */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px */
-    padding-right: 1rem; /* 16px */
+    padding-left: 1rem;
+    /* 16px */
+    padding-right: 1rem;
+    /* 16px */
 }
 
 /* Responsive padding for navbar-container */
 @media (min-width: 640px) {
     .navbar-container {
-        padding-left: 1.5rem; /* 24px */
-        padding-right: 1.5rem; /* 24px */
+        padding-left: 1.5rem;
+        /* 24px */
+        padding-right: 1.5rem;
+        /* 24px */
     }
 }
+
 @media (min-width: 1024px) {
     .navbar-container {
-        padding-left: 2rem; /* 32px */
-        padding-right: 2rem; /* 32px */
+        padding-left: 2rem;
+        /* 32px */
+        padding-right: 2rem;
+        /* 32px */
     }
 }
 
@@ -50,14 +58,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4rem; /* 64px */
+    height: 4rem;
+    /* 64px */
 }
 
 .navbar-brand {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
+    /* 20px */
     line-height: 1.75rem;
     font-weight: 700;
-    color: var(--color-text-primary); /* text-blue-600 */
+    color: var(--color-text-primary);
+    /* text-blue-600 */
 }
 
 .navbar-links {
@@ -72,30 +83,40 @@
 }
 
 .navbar-links-inner {
-    margin-left: 2.5rem; /* 40px */
+    margin-left: 2.5rem;
+    /* 40px */
     display: flex;
     align-items: baseline;
 }
 
 /* Space between links */
-.navbar-links-inner > *:not(:first-child) {
-    margin-left: 1rem; /* 16px */
+.navbar-links-inner>*:not(:first-child) {
+    margin-left: 1rem;
+    /* 16px */
 }
 
 .navbar-link {
-    color: var(--color-text-primary); /* text-gray-700 */
-    padding: 0.5rem 0.75rem; /* py-2 px-3 */
-    border-radius: 0.375rem; /* rounded-md */
-    font-size: 0.875rem; /* text-sm */
+    color: var(--color-text-primary);
+    /* text-gray-700 */
+    padding: 0.5rem 0.75rem;
+    /* py-2 px-3 */
+    border-radius: 0.375rem;
+    /* rounded-md */
+    font-size: 0.875rem;
+    /* text-sm */
     line-height: 1.25rem;
     font-weight: 500;
-    text-decoration: none; /* Added for good practice */
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Added for good practice */
+    text-decoration: none;
+    /* Added for good practice */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    /* Added for good practice */
 }
 
 .navbar-link:hover {
-    background-color: var(--color-heading-hover); /* hover:bg-blue-500 */
-    color: var(--color-text-primary); /* hover:text-white */
+    background-color: var(--color-heading-hover);
+    /* hover:bg-blue-500 */
+    color: var(--color-text-primary);
+    /* hover:text-white */
 }
 
 /*CSS*/
@@ -128,7 +149,7 @@ legend {
     font-size: 1.2em;
     color: var(--color-text-primary);
     padding: 10px;
-    background-color: var(--color-primary);
+    background-color: var(--color-heading);
 }
 
 .form-grid {
@@ -152,15 +173,29 @@ label {
     color: var(--color-text-secondary);
 }
 
+/*Agrupar requisiciones*/
+.agrupar-form legend {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background-color: var(--color-primary);    
+    
+}
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="checkbox"],
+input[type="radio"],
+
 select,
 textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--color-border);
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
     transition: border-color 0.3s;
 }
@@ -174,7 +209,7 @@ textarea:focus {
 
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 100px;
 }
 
 .button-container {
@@ -183,7 +218,7 @@ textarea {
 }
 
 button {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-hover);
     color: white;
     padding: 12px 25px;
     border: none;
@@ -194,7 +229,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-primary);
 }
 
 .sub-fieldset {
@@ -209,6 +244,22 @@ button:hover {
     font-size: 1em;
 }
 
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.form-group input[type="checkbox"] + label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
 /*footer*/
 .footer-container {
     background-color: var(--color-primary-hover);
@@ -217,14 +268,19 @@ button:hover {
     padding: 35px 0;
     margin-top: 50px;
     box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
-    position: relative; 
-    overflow: hidden;   
+    position: relative;
+    overflow: hidden;
 }
+
 .footer-container img {
-    position: absolute;      
-    top: 50%;                /* Vertically center */
-    right: 10px;             /* 10px from right edge */
-    transform: translateY(-50%); /* Center vertically */
+    position: absolute;
+    top: 50%;
+    /* Vertically center */
+    right: 10px;
+    /* 10px from right edge */
+    transform: translateY(-50%);
+    /* Center vertically */
     width: 250px;
-    margin: 0;               /* Remove float/margin */
+    margin: 0;
+    /* Remove float/margin */
 }
